@@ -1773,7 +1773,7 @@ header.main-header{
 /***    15. About us Page css	  ***/
 /************************************/
 
-.page-header{
+.page-header {
 	margin: 0 40px;
 	margin-top: 10px;
 	overflow: hidden;
@@ -1782,9 +1782,28 @@ header.main-header{
 	background-size: cover;
 	padding: 220px 0 120px;
 	position: relative;
-	/* margin-top: -103px; */
-	height:800px;
+	height: 800px; /* keeps desktop layout */
 }
+
+
+@media screen and (max-width: 768px) {
+	.page-header {
+	  height: 500px;
+	  padding: 150px 0 80px;
+	  background-position: center top;
+	  background-size: cover;
+	}
+  }
+  
+  @media screen and (max-width: 480px) {
+	.page-header {
+	  height: 400px;
+	  padding: 120px 0 60px;
+	  background-position: center top;
+	  background-size: cover;
+	}
+  }
+  
 
 .page-header:before{
 	content: '';
@@ -4279,9 +4298,7 @@ header.main-header{
 		text-align: center;
 	}
 
-	.page-header{
-		padding: 150px 0 60px;
-	}
+	
 
 	.page-header-box h1{
 		font-size: 36px;

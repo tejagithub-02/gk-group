@@ -137,6 +137,7 @@
           <img src="images/b6.jpg" alt="Banner 2">
         </div>
       </div>
+      
     </div>
 
    
@@ -166,6 +167,18 @@
 
 
 
+}
+
+/* Mobiles */
+@media (max-width: 576px) {
+  .banner-swiper {
+    height: 35vh; /* Less height for small screens */
+  }
+
+  .banner-image img {
+    object-fit: cover;
+    object-position: center; /* Keep the focus area visible */
+  }
 }
 
 .banner-image {
@@ -1543,7 +1556,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <!-- Footer Logo Start -->
                     <div class="footer-logo">
                         <figure>
-                            <img src="images/logo1.png" alt="" style="height:150px;width:150px;">
+                            <img src="images/logo2.png" alt="" style="height:150px;width:150px; border-radius: 10px;">
                         </figure>
                     </div>
                     <!-- Footer Logo End -->
