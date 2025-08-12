@@ -96,7 +96,7 @@
                                 </li>
                                 <li class="nav-item"><a class="nav-link" style="color: white;" href="contact.html">Contact Us</a></li>
                                 <li class="nav-item highlighted-menu">
-                                    <a class="nav-link" style="color: #fcbf49;" href="enquiry.html">Enquiry Form</a>
+                                    <a class="nav-link"  href="enquiry.html">Enquiry Form</a>
                                 </li>
                             </ul>
                         </div>
@@ -119,46 +119,33 @@
         </div>
     </header>
       <!-- Page Header Start -->
-	<div class="page-header parallaxie">
+      <div class="page-header parallaxie">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<!-- Page Header Box Start -->
-					<div class="page-header-box" style="margin-left: 200px;">
-                        <h1 class="text-anime-style-3" data-cursor="-opaque">Upcoming Projects</h1>
-                      </div>
-					<!-- Page Header Box End -->
-				</div>
+	<!-- Page Header Box Start -->
+					<div class="page-header-box">
+                        <h1 class="text-anime-style-3" data-cursor="-opaque">
+                            Completed <span id="breakPoint" style="display:none;"><br></span>Projects
+                          </h1>
 			</div>
 		</div>
 	</div>
 
-
     <style>
-        
-        @media screen and (max-width: 768px) {
-        .page-header {
-          height: 500px;
-          margin-top: -25px;
-          padding: 100px 0 80px;
-          background-position: center top;
-          background-size: cover;
+        @media screen and (min-width: 1025px) {
+          .page-header-box h1 {
+            position: relative;
+            left: 200px; /* moves right by 20px on desktop */
+          }
         }
-       
-      }
       
-      
-      
-      @media screen and (max-width: 480px) {
-        .page-header {
-          height: 400px;
-          padding: 120px 0 60px;
-          background-position: center 25%;
-          background-size: cover;
-          
-        }
-      }
-          </style>
+      </style>
+
+<script>
+    if (window.innerWidth <= 768) {  // For small screens only
+      document.getElementById('breakPoint').style.display = 'inline';
+    }
+  </script>
+
 	<!-- Page Header End -->
   <div class="upcoming-projects-section" style="padding: 50px 0; background-color: #f4f4f4; position: relative; overflow: hidden;">
     <div class="shapes">
