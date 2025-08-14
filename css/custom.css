@@ -430,11 +430,11 @@ body{
 /************************************/
 
 header.main-header{
-	background-color: transparent;
+	
 	border-bottom: 1px solid var(--dark-divider-color);
 	position: relative;
 	z-index: 100;
-	background-color: #2d2c2c;
+
 	/* margin: 0px 40px 0px 40px; */
 
 	/* padding-top: 20px; */

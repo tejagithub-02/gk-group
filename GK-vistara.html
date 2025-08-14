@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GK Vistara Brochure</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/logo1.png">
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #003d3b, #0d0d0d);
+        color: #fff;
+        overflow-x: hidden;
+    }
+    header {
+        text-align: center;
+        padding: 25px 15px;
+        background: rgba(0, 61, 59, 0.9);
+        color: #ffd700;
+        font-size: clamp(24px, 3vw, 38px);
+        font-weight: bold;
+        letter-spacing: 2px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        backdrop-filter: blur(6px);
+        border-bottom: 3px solid rgba(255, 215, 0, 0.4);
+    }
+    /* Back Button */
+    .back-btn {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background: rgba(255, 215, 0, 0.15);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 215, 0, 0.5);
+        color: #ffd700;
+        padding: 10px 16px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        z-index: 9999;
+    }
+    .back-btn:hover {
+        background: rgba(255, 215, 0, 0.3);
+        transform: scale(1.05);
+    }
+    /* Swiper Container */
+    .swiper {
+        width: 90%;
+        max-width: 1400px;
+        aspect-ratio: 16 / 9; /* Keeps correct ratio */
+        margin: 40px auto;
+        border-radius: 15px;
+        overflow: hidden;
+        background: rgba(0, 61, 59, 0.7);
+        backdrop-filter: blur(6px);
+        padding: 10px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+        border: 3px solid rgba(255, 215, 0, 0.4);
+    }
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Ensures full visibility */
+        border-radius: 10px;
+        transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease;
+    }
+    .swiper-slide-active img {
+        transform: scale(1.03);
+        opacity: 1;
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+    }
+    /* Navigation */
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: #ffd700;
+        text-shadow: 0 0 10px rgba(255,215,0,0.7);
+    }
+    .swiper-pagination-bullet {
+        background: #ffd700;
+        opacity: 0.8;
+    }
+    .swiper-pagination-bullet-active {
+        background: #ffcc00;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+        .swiper {
+            aspect-ratio: 4 / 3;
+        }
+    }
+    @media (max-width: 480px) {
+        .swiper {
+            aspect-ratio: 1 / 1;
+        }
+    }
+    /* Mobile adjustment for Back Button */
+    @media (max-width: 600px) {
+    .back-btn {
+        top: 88px; /* push down so it clears the header text */
+        left: 10px;
+        font-size: 13px; /* slightly smaller for mobile */
+        padding: 8px 14px;
+    }
+}
+
+
+</style>
+</head>
+<body>
+
+<!-- Back Button -->
+<a href="ongoing.html" class="back-btn">⬅ Back</a>
+
+<header>
+    GK Vistara Brochure
+</header>
+
+<!-- Swiper Slider -->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="brochures/vistara-1.jpg" alt="Slide 1"></div>
+        <div class="swiper-slide"><img src="brochures/vistara-2.jpg" alt="Slide 2"></div>
+        <div class="swiper-slide"><img src="brochures/vistara-3.jpg" alt="Slide 3"></div>
+        <div class="swiper-slide"><img src="brochures/vistara-4.jpg" alt="Slide 4"></div>
+        <div class="swiper-slide"><img src="brochures/vistara-5.jpg" alt="Slide 5"></div>
+        <div class="swiper-slide"><img src="brochures/vistara-6.jpg" alt="Slide 6"></div>
+    </div>
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    speed: 800,
+});
+</script>
+
+</body>
+</html>

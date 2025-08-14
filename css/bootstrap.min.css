@@ -4030,6 +4030,7 @@ fieldset:disabled .btn {
   .navbar-expand-lg .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+   
   }
   .navbar-expand-lg .navbar-toggler {
     display: none;
