@@ -6,7 +6,7 @@
   <title>GK Fortune Brochure</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/logo1.png">
+  <link rel="icon" type="image/png" href="images/favicon.jpg">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -57,10 +57,10 @@
     /* Header */
     header {
       background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-                  url('brochures/fortune-1.jpg') center/cover no-repeat;
+                  url('brochures/fortune-3.jpg') center/cover no-repeat;
       color: #fff;
       text-align: center;
-      padding: 120px 20px;
+      padding:60px 20px;
       font-family: 'Playfair Display', serif;
     }
     header .tagline {font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 10px;}
@@ -107,6 +107,26 @@
       .brochure-item:nth-child(even) img {border-left: 3px solid var(--primary);}
       .brochure-text {width: 50%; display: flex; flex-direction: column; justify-content: center;}
     }
+    @media (min-width: 768px) {
+  .brochure-item.text-only {
+    flex-direction: column;      /* stack instead of row */
+    align-items: center;         /* center horizontally */
+    justify-content: center;     /* center vertically */
+    text-align: center;          /* center text */
+  }
+
+  .brochure-item.text-only .brochure-text {
+    width: 100%;                 /* allow full width */
+    max-width: 800px;            /* but keep it tidy */
+    padding: 50px 40px;          /* extra breathing room */
+  }
+
+  .brochure-item.text-only .brochure-text h2::after {
+    left: 50%;                   /* underline centered */
+    transform: translateX(-50%);
+  }
+}
+
   </style>
 </head>
 <body>
@@ -117,21 +137,21 @@
 <!-- Header -->
 <header>
   <div class="tagline">EXCLUSIVE HOMES, ELEVATED LIFESTYLE</div>
-  <h1>GK Fortune</h1>
+  <h1>GK Groups</h1>
   <p>Premium Residences for Modern Living</p>
 </header>
 
 <!-- Hero -->
 <section class="hero">
-  <h2>Welcome to GK Fortune – Where Luxury Meets Elegance</h2>
-  <p>Discover an elevated lifestyle with GK Fortune. Spacious layouts, premium amenities, and unmatched design make this your perfect home.</p>
+  <h2>Welcome to GK Groups – Where Luxury Meets Elegance</h2>
+  <p>Discover an elevated lifestyle with GK Groups. Spacious layouts, premium amenities, and unmatched design make this your perfect home.</p>
 </section>
 
 <!-- Brochure Pages -->
 <div class="brochure-container">
 
   <div class="brochure-item">
-    <img src="brochures/fortune-1.jpg" alt="GK Fortune Overview">
+    <img src="brochures/fortune-1.jpg" alt="GK Groups Overview">
     <div class="brochure-text">
       <h2>Project Overview</h2>
       <p>Welcome to <strong>GK Fortune</strong> – a boutique lifestyle address at Thanisandra that brings together elegance, comfort, and exclusivity. With limited-edition homes, designed for discerning individuals, every detail reflects sophistication and thoughtful planning.</p>
@@ -141,7 +161,7 @@
   
 
   <div class="brochure-item">
-    <img src="brochures/fortune-7.jpg" alt="GK Fortune Lifestyle">
+    <img src="brochures/fortune-2.jpg" alt="GK Fortune Lifestyle">
     <div class="brochure-text">
       <h2>Lifestyle</h2>
       <p>Step into a world where style meets comfort. GK Fortune offers a lifestyle curated for the modern achiever – spaces that inspire, interiors that impress, and an ambiance that elevates everyday living.</p>
@@ -207,7 +227,7 @@
 <div class="brochure-item">
   <img src="brochures/fortune-6.jpg" alt="Why Choose GK Fortune">
   <div class="brochure-text">
-      <h2>Why Choose GK Fortune?</h2>
+      <h2>Why Choose GK Groups?</h2>
       <p>Crafted and delivered by GK Group, where every detail speaks of quality and commitment to modern living.</p>
       <ul>
           <li>RCC framed structure for strength and durability</li>

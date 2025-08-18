@@ -1,166 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GK Gateway Brochure</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GK Gateway Brochure</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.jpg">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #c19a6b;
+      --primary-dark: #8c6e4a;
+      --dark: #222;
+      --light: #f9f9f9;
+      --gray: #e0e0e0;
+      --transition: all 0.3s ease;
+    }
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="images/logo1.png">
-
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
-<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-        margin: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #003d3b, #0d0d0d);
-        color: #fff;
-        overflow-x: hidden;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--dark);
+      background: var(--light);
+      line-height: 1.7;
+      overflow-x: hidden;
     }
-    header {
-        text-align: center;
-        padding: 25px 15px;
-        background: rgba(0, 61, 59, 0.9);
-        color: #ffd700;
-        font-size: clamp(24px, 3vw, 38px);
-        font-weight: bold;
-        letter-spacing: 2px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        backdrop-filter: blur(6px);
-        border-bottom: 3px solid rgba(255, 215, 0, 0.4);
-    }
+
     /* Back Button */
     .back-btn {
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        background: rgba(255, 215, 0, 0.15);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 215, 0, 0.5);
-        color: #ffd700;
-        padding: 10px 16px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-size: 14px;
-        transition: all 0.3s ease;
-        z-index: 9999;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
+      background: var(--primary);
+      color: #fff;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: var(--transition);
     }
     .back-btn:hover {
-        background: rgba(255, 215, 0, 0.3);
-        transform: scale(1.05);
+      background: var(--primary-dark);
+      transform: translateX(-3px);
     }
-    /* Swiper Container */
-    .swiper {
-        width: 90%;
-        max-width: 1400px;
-        aspect-ratio: 16 / 9; /* Keeps correct ratio */
-        margin: 40px auto;
-        border-radius: 15px;
-        overflow: hidden;
-        background: rgba(0, 61, 59, 0.7);
-        backdrop-filter: blur(6px);
-        padding: 10px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-        border: 3px solid rgba(255, 215, 0, 0.4);
-    }
-    .swiper-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* Ensures full visibility */
-        border-radius: 10px;
-        transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease;
-    }
-    .swiper-slide-active img {
-        transform: scale(1.03);
-        opacity: 1;
-        box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
-    }
-    /* Navigation */
-    .swiper-button-next,
-    .swiper-button-prev {
-        color: #ffd700;
-        text-shadow: 0 0 10px rgba(255,215,0,0.7);
-    }
-    .swiper-pagination-bullet {
-        background: #ffd700;
-        opacity: 0.8;
-    }
-    .swiper-pagination-bullet-active {
-        background: #ffcc00;
-    }
-    /* Responsive */
-    @media (max-width: 768px) {
-        .swiper {
-            aspect-ratio: 4 / 3;
-        }
-    }
-    @media (max-width: 480px) {
-        .swiper {
-            aspect-ratio: 1 / 1;
-        }
-    }
-    @media (max-width: 600px) {
-    .back-btn {
-        top: 88px; /* push down so it clears the header text */
-        left: 10px;
-        font-size: 13px; /* slightly smaller for mobile */
-        padding: 8px 14px;
-    }
-}
 
-</style>
+    /* Header */
+    header {
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                  url('brochures/gateway-1.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px 100px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1000px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 18px;
+      color: var(--primary-dark);
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: #555;
+    }
+
+    /* Brochure Container */
+    .brochure-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+      display: grid;
+      gap: 40px;
+    }
+
+    /* Brochure Item */
+    .brochure-item {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: var(--transition);
+    }
+    .brochure-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+
+    .brochure-item img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      background: #fafafa;
+      border-bottom: 3px solid var(--primary);
+    }
+
+    .brochure-text {
+      padding: 28px;
+    }
+    .brochure-text h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-dark);
+      margin-bottom: 18px;
+      font-size: 1.8rem;
+      position: relative;
+      padding-bottom: 8px;
+    }
+    .brochure-text h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    .brochure-text p { margin-bottom: 16px; color: #555; }
+    .brochure-text ul { list-style: none; }
+    .brochure-text ul li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .brochure-text ul li::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--primary);
+    }
+    .brochure-text b { color: var(--primary-dark); }
+
+    .text-only { text-align: center; }
+    .text-only .brochure-text h2::after { left: 50%; transform: translateX(-50%); }
+    .text-only .brochure-text p { max-width: 750px; margin: 0 auto; }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .hero h1 { font-size: 2.8rem; }
+      .brochure-item { flex-direction: row; align-items: stretch; }
+      .brochure-item:nth-child(even) { flex-direction: row-reverse; }
+      .brochure-item img {
+        width: 50%; height: 100%; object-fit: cover;
+        border-bottom: none;
+      }
+      .brochure-item:nth-child(odd) img { border-right: 3px solid var(--primary); }
+      .brochure-item:nth-child(even) img { border-left: 3px solid var(--primary); }
+      .brochure-text {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px;
+      }
+    }
+    
+    @media (min-width: 992px) {
+      .hero h1 { font-size: 3rem; }
+      .brochure-text h2 { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
 
 <!-- Back Button -->
-<a href="ongoing.html" class="back-btn">⬅ Back</a>
+<a href="ongoing.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
 
 <header>
-    GK Gateway Brochure
+  GK Gateway Brochure
 </header>
 
-<!-- Swiper Slider -->
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="brochures/gateway-1.jpg" alt="Slide 1"></div>
-        <div class="swiper-slide"><img src="brochures/gateway-2.jpg" alt="Slide 2"></div>
-        <div class="swiper-slide"><img src="brochures/gateway-3.jpg" alt="Slide 3"></div>
-        <div class="swiper-slide"><img src="brochures/gateway-4.jpg" alt="Slide 4"></div>
-        <div class="swiper-slide"><img src="brochures/gateway-5.jpg" alt="Slide 5"></div>
-        <div class="swiper-slide"><img src="brochures/gateway-6.jpg" alt="Slide 6"></div>
-        <div class="swiper-slide"><img src="brochures/gateway-7.jpg" alt="Slide 7"></div>
-        <div class="swiper-slide"><img src="brochures/gateway-8.jpg" alt="Slide 8"></div>
-        <div class="swiper-slide"><img src="brochures/gateway-9.jpg" alt="Slide 9"></div>
+<!-- Hero -->
+<section class="hero">
+  <h1>Where Modern Living Meets Luxury</h1>
+  <p>GK Gateway redefines urban lifestyle with premium homes, world-class amenities, and thoughtful design. A perfect blend of modern architecture, comfort, and convenience, making every day extraordinary.</p>
+</section>
+
+<!-- Brochure Content -->
+<div class="brochure-container">
+
+  <div class="brochure-item">
+    <img src="brochures/gateway-1.jpg" alt="GK Gateway Overview">
+    <div class="brochure-text">
+      <h2>Project Overview</h2>
+      <p>Experience premium living with state-of-the-art architecture and elegant designs at GK Gateway. This project is crafted to cater to families seeking a lifestyle that balances luxury with functionality.</p>
+      <ul>
+        <li>Vaastu Compliant Homes with optimal planning</li>
+        <li>Spacious 2BHK & 3BHK Layouts with natural ventilation</li>
+        <li>Premium Construction Quality using durable materials</li>
+        <li>Earthquake-resistant RCC structure</li>
+        <li>Eco-friendly design with rainwater harvesting</li>
+      </ul>
     </div>
-    <!-- Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Navigation -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+  </div>
+
+  <div class="brochure-item">
+    <img src="brochures/gateway-2.jpg" alt="Amenities">
+    <div class="brochure-text">
+      <h2>World-Class Amenities</h2>
+      <p>A host of modern conveniences designed to complement your lifestyle and provide a resort-like living experience.</p>
+      <ul>
+        <li>24×7 Security & CCTV surveillance</li>
+        <li>Power Backup for common areas & apartments</li>
+        <li>High-speed Elevators with ARD system</li>
+        <li>Clubhouse with multipurpose hall</li>
+        <li>Well-equipped Gym & Indoor Games</li>
+        <li>Children’s Play Area & Landscaped Gardens</li>
+        <li>Swimming Pool & Jogging Track</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="brochure-item">
+    <img src="brochures/gateway-3.jpg" alt="Design & Interiors">
+    <div class="brochure-text">
+      <h2>Elegant Interiors</h2>
+      <p>Contemporary interiors designed with premium finishes, abundant natural light, and space optimization. Every detail reflects sophistication and elegance.</p>
+      <ul>
+        <li>Designer false ceiling with concealed lighting</li>
+        <li>Premium paint finishes on walls & ceilings</li>
+        <li>Spacious balconies with scenic views</li>
+        <li>Large windows ensuring cross ventilation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="brochure-item">
+    <img src="brochures/gateway-4.jpg" alt="Floor Plans">
+    <div class="brochure-text">
+      <h2>Spacious Floor Plans</h2>
+      <ul>
+        <li><b>2 BHK:</b> Designed for compact yet luxury living, featuring efficient layouts with modern utilities.</li>
+        <li><b>3 BHK:</b> Spacious layouts with multiple balconies, large living areas, and private bedrooms.</li>
+        <li>Smart space utilization for comfort & convenience</li>
+        <li>Flexible designs suitable for families of all sizes</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="brochure-item">
+    <img src="brochures/gateway-5.jpg" alt="Specifications">
+    <div class="brochure-text">
+      <h2>Specifications</h2>
+      <ul>
+        <li><b>Flooring:</b> Premium Vitrified Tiles in all rooms</li>
+        <li><b>Doors:</b> Solid Teak Veneer Main Door with premium hardware</li>
+        <li><b>Windows:</b> UPVC with Glass Panels and mosquito mesh provision</li>
+        <li><b>Walls:</b> Smooth finish with high-quality putty and emulsion paint</li>
+        <li><b>Electrical:</b> Branded switches & concealed copper wiring</li>
+        <li><b>Plumbing:</b> Superior quality CP fittings & sanitary ware</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="brochure-item">
+    <img src="brochures/gateway-6.jpg" alt="Area Statement">
+    <div class="brochure-text">
+      <h2>Area Statement</h2>
+      <p>
+        Well-planned 2BHK & 3BHK flats with good ventilation, natural light, and multiple facing options.
+      </p>
+      <ul>
+        <li>Flat 1 – 3BHK, West – 1690 sft</li>
+        <li>Flat 2 – 2BHK, West – 1230 sft</li>
+        <li>Flat 3 – 2BHK, West – 1230 sft</li>
+        <li>Flat 4 – 2BHK, West – 1230 sft</li>
+        <li>Flat 5 – 2BHK, West – 1230 sft</li>
+        <li>Flat 6 – 2BHK, East – 1185 sft</li>
+      </ul>
+    </div>
+  </div>
+  
+  
+
+  <div class="brochure-item">
+    <img src="brochures/gateway-7.jpg" alt="Community">
+    <div class="brochure-text">
+      <h2>Community Living</h2>
+      <p>A well-planned community with landscaped surroundings, peaceful ambiance, and modern facilities that foster togetherness and security.</p>
+      <ul>
+        <li>Landscaped gardens with seating areas</li>
+        <li>Dedicated kids’ play zones</li>
+        <li>Ample car parking with EV charging points</li>
+        <li>Rainwater harvesting & sewage treatment plant</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="brochure-item">
+    <img src="brochures/gateway-8.jpg" alt="Connectivity">
+    <div class="brochure-text">
+      <h2>Prime Location</h2>
+      <p>Located at the heart of the city with seamless connectivity to business hubs, educational institutions, and healthcare facilities.</p>
+      <ul>
+        <li>5 mins to International Schools</li>
+        <li>10 mins to Top Hospitals</li>
+        <li>Nearby IT & Business Parks</li>
+        <li>Close to Shopping Malls & Entertainment Zones</li>
+        <li>Well-connected by Metro, Road & Public Transport</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="brochure-item text-only">
+    <div class="brochure-text">
+      <h2>Why Choose GK Groups?</h2>
+      <ul>
+        <li>Exclusive flats ensuring privacy and comfort</li>
+        <li>Modern architecture with timeless appeal</li>
+        <li>Premium construction with luxury finishes</li>
+        <li>Trusted brand with 25+ years of excellence</li>
+        <li>Eco-friendly and sustainable development</li>
+        <li>Unmatched connectivity and urban convenience</li>
+      </ul>
+    </div>
+  </div>
+
 </div>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-    speed: 800,
-});
-</script>
 
 </body>
 </html>
