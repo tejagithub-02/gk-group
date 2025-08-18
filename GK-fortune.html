@@ -1,163 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GK Fortune Brochure</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GK Fortune Brochure</title>
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="images/logo1.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo1.png">
 
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-<style>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #c19a6b;
+      --primary-dark: #8c6e4a;
+      --dark: #222;
+      --light: #f9f9f9;
+      --green: #355930;
+      --transition: all 0.3s ease;
+    }
+
+    * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
-        margin: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #003d3b, #0d0d0d);
-        color: #fff;
-        overflow-x: hidden;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.7;
+      overflow-x: hidden;
     }
-    header {
-        text-align: center;
-        padding: 25px 15px;
-        background: rgba(0, 61, 59, 0.9);
-        color: #ffd700;
-        font-size: clamp(24px, 3vw, 38px);
-        font-weight: bold;
-        letter-spacing: 2px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        backdrop-filter: blur(6px);
-        border-bottom: 3px solid rgba(255, 215, 0, 0.4);
-    }
+
     /* Back Button */
     .back-btn {
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        background: rgba(255, 215, 0, 0.15);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 215, 0, 0.5);
-        color: #ffd700;
-        padding: 10px 16px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-size: 14px;
-        transition: all 0.3s ease;
-        z-index: 9999;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: var(--primary);
+      color: #fff;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: var(--transition);
+      z-index: 100;
     }
-    .back-btn:hover {
-        background: rgba(255, 215, 0, 0.3);
-        transform: scale(1.05);
-    }
-    /* Swiper Container */
-    .swiper {
-        width: 90%;
-        max-width: 1400px;
-        aspect-ratio: 16 / 9; /* Keeps correct ratio */
-        margin: 40px auto;
-        border-radius: 15px;
-        overflow: hidden;
-        background: rgba(0, 61, 59, 0.7);
-        backdrop-filter: blur(6px);
-        padding: 10px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-        border: 3px solid rgba(255, 215, 0, 0.4);
-    }
-    .swiper-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* Ensures full visibility */
-        border-radius: 10px;
-        transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease;
-    }
-    .swiper-slide-active img {
-        transform: scale(1.03);
-        opacity: 1;
-        box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
-    }
-    /* Navigation */
-    .swiper-button-next,
-    .swiper-button-prev {
-        color: #ffd700;
-        text-shadow: 0 0 10px rgba(255,215,0,0.7);
-    }
-    .swiper-pagination-bullet {
-        background: #ffd700;
-        opacity: 0.8;
-    }
-    .swiper-pagination-bullet-active {
-        background: #ffcc00;
-    }
-    /* Responsive */
-    @media (max-width: 768px) {
-        .swiper {
-            aspect-ratio: 4 / 3;
-        }
-    }
-    @media (max-width: 480px) {
-        .swiper {
-            aspect-ratio: 1 / 1;
-        }
-    }
-    @media (max-width: 600px) {
-    .back-btn {
-        top: 88px; /* push down so it clears the header text */
-        left: 10px;
-        font-size: 13px; /* slightly smaller for mobile */
-        padding: 8px 14px;
-    }
-}
+    .back-btn:hover {background: var(--primary-dark); transform: translateX(-3px);}
 
-</style>
+    /* Header */
+    header {
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                  url('brochures/fortune-1.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px;
+      font-family: 'Playfair Display', serif;
+    }
+    header .tagline {font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 10px;}
+    header h1 {font-size: 2.8rem; font-weight: 600; margin-bottom: 8px;}
+    header p {font-size: 1.1rem;}
+
+    /* Hero */
+    .hero {
+      max-width: 950px;
+      margin: 60px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h2 {font-family: 'Playfair Display', serif; font-size: 2.3rem; margin-bottom: 15px; color: var(--primary-dark);}
+    .hero p {font-size: 1.1rem; color: #555;}
+
+    /* Brochure Container */
+    .brochure-container {max-width: 1200px; margin: 0 auto; padding: 0 20px 80px; display: grid; gap: 40px;}
+    .brochure-item {
+      display: flex; flex-direction: column; background: #fff; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1); transition: var(--transition);
+    }
+    .brochure-item:hover {transform: translateY(-6px); box-shadow: 0 12px 28px rgba(0,0,0,0.15);}
+    .brochure-item img {width: 100%; height: auto; object-fit: contain; border-bottom: 3px solid var(--primary);}
+    .brochure-text {padding: 28px;}
+    .brochure-text h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary-dark);
+      margin-bottom: 18px; position: relative; padding-bottom: 6px;
+    }
+    .brochure-text h2::after {
+      content: ""; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px;
+      background: var(--primary); border-radius: 2px;
+    }
+    .brochure-text p {margin-bottom: 16px; color: #555;}
+    .brochure-text ul {margin: 10px 0 20px 20px; color: #555;}
+    .brochure-text ul li {margin-bottom: 8px;}
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .brochure-item {flex-direction: row;}
+      .brochure-item:nth-child(even) {flex-direction: row-reverse;}
+      .brochure-item img {width: 50%; height: 100%; object-fit: cover; border-bottom: none;}
+      .brochure-item:nth-child(odd) img {border-right: 3px solid var(--primary);}
+      .brochure-item:nth-child(even) img {border-left: 3px solid var(--primary);}
+      .brochure-text {width: 50%; display: flex; flex-direction: column; justify-content: center;}
+    }
+  </style>
 </head>
 <body>
 
 <!-- Back Button -->
-<a href="ongoing.html" class="back-btn">⬅ Back</a>
+<a href="ongoing.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
 
+<!-- Header -->
 <header>
-    GK Fortune Brochure
+  <div class="tagline">EXCLUSIVE HOMES, ELEVATED LIFESTYLE</div>
+  <h1>GK Fortune</h1>
+  <p>Premium Residences for Modern Living</p>
 </header>
 
-<!-- Swiper Slider -->
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="brochures/fortune-1.jpg" alt="Slide 1"></div>
-        <div class="swiper-slide"><img src="brochures/fortune-2.jpg" alt="Slide 2"></div>
-        <div class="swiper-slide"><img src="brochures/fortune-3.jpg" alt="Slide 3"></div>
-        <div class="swiper-slide"><img src="brochures/fortune-4.jpg" alt="Slide 4"></div>
-        <div class="swiper-slide"><img src="brochures/fortune-5.jpg" alt="Slide 5"></div>
-        <div class="swiper-slide"><img src="brochures/fortune-6.jpg" alt="Slide 6"></div>
+<!-- Hero -->
+<section class="hero">
+  <h2>Welcome to GK Fortune – Where Luxury Meets Elegance</h2>
+  <p>Discover an elevated lifestyle with GK Fortune. Spacious layouts, premium amenities, and unmatched design make this your perfect home.</p>
+</section>
+
+<!-- Brochure Pages -->
+<div class="brochure-container">
+
+  <div class="brochure-item">
+    <img src="brochures/fortune-1.jpg" alt="GK Fortune Overview">
+    <div class="brochure-text">
+      <h2>Project Overview</h2>
+      <p>Welcome to <strong>GK Fortune</strong> – a boutique lifestyle address at Thanisandra that brings together elegance, comfort, and exclusivity. With limited-edition homes, designed for discerning individuals, every detail reflects sophistication and thoughtful planning.</p>
+      <p>From modern architecture to serene surroundings, GK Fortune redefines what it means to live in luxury while staying connected to the vibrancy of city life.</p>
     </div>
-    <!-- Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Navigation -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+  </div>
+  
+
+  <div class="brochure-item">
+    <img src="brochures/fortune-7.jpg" alt="GK Fortune Lifestyle">
+    <div class="brochure-text">
+      <h2>Lifestyle</h2>
+      <p>Step into a world where style meets comfort. GK Fortune offers a lifestyle curated for the modern achiever – spaces that inspire, interiors that impress, and an ambiance that elevates everyday living.</p>
+      <p>Whether it’s hosting gatherings in elegant lounges or unwinding in thoughtfully crafted homes, GK Fortune is where life feels seamless and fulfilling.</p>
+    </div>
+  </div>
+  
+
+  <div class="brochure-item">
+    <img src="brochures/fortune-3.jpg" alt="GK Fortune Highlights">
+    <div class="brochure-text">
+      <h2>Project Highlights</h2>
+      <p>GK Fortune is thoughtfully designed to offer a blend of luxury, sustainability, and functionality – a perfect choice for modern families.</p>
+      <ul>
+        <li>Luxurious 2 & 3 BHK Apartments.</li>
+        <li>Vaastu-compliant layouts for positive energy.</li>
+        <li>Premium branded fittings & finishes.</li>
+        <li>Spacious balconies with scenic views.</li>
+        <li>High-speed automatic lifts.</li>
+        <li>100% Power backup for common areas.</li>
+        <li>Rainwater harvesting system.</li>
+        <li>Eco-friendly solid waste management.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="brochure-item">
+    <img src="brochures/fortune-4.jpg" alt="GK Fortune Amenities">
+    <div class="brochure-text">
+        <h2>Amenities</h2>
+        <p>Discover a range of resident-centric facilities designed for comfort, safety, and active living.</p>
+        <ul>
+            <li>RCC framed structure for lasting durability</li>
+            <li>Cement block construction (6” exterior & 4” interior)</li>
+            <li>Cement mortar finish & smooth painted surfaces</li>
+            <li>Main doors in teak wood frame, elegant flush and UPVC windows</li>
+            <li>Living/dining/bedrooms with vitrified tile flooring</li>
+            <li>Anti-skid tiles in balconies, kitchen, and bathrooms</li>
+            <li>Granite kitchen counter & stainless steel sink</li>
+            <li>Bathrooms with branded CP fittings & sanitary ware</li>
+            <li>Generator backup for common areas</li>
+            <li>High-speed lift & secure parking spaces</li>
+        </ul>
+    </div>
 </div>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-    speed: 800,
-});
-</script>
+<div class="brochure-item">
+    <img src="brochures/fortune-5.jpg" alt="GK Fortune Location">
+    <div class="brochure-text">
+        <h2>Location Advantages</h2>
+        <p>Ideally positioned in Thanisandra, GK Fortune offers calm surroundings with easy access to essential city infrastructure.</p>
+        <ul>
+            <li>Well-planned building layouts with ample ventilation and lighting</li>
+            <li>Close proximity to prime roads and public transport</li>
+            <li>Quick access to top schools, colleges, shopping, and hospitals</li>
+            <li>Neighborhood equipped with water supply & rainwater harvesting</li>
+            <li>Peaceful environment with green parks and open spaces</li>
+            <li>Secure and family-friendly locality</li>
+        </ul>
+    </div>
+</div>
+
+<div class="brochure-item">
+  <img src="brochures/fortune-6.jpg" alt="Why Choose GK Fortune">
+  <div class="brochure-text">
+      <h2>Why Choose GK Fortune?</h2>
+      <p>Crafted and delivered by GK Group, where every detail speaks of quality and commitment to modern living.</p>
+      <ul>
+          <li>RCC framed structure for strength and durability</li>
+          <li>6" thick external walls and 4" internal walls made with cement blocks</li>
+          <li>Teak wood frame main doors, premium flush and UPVC windows</li>
+          <li>Vitrified tiles in living, dining, and bedrooms; anti-skid tiles in balconies and bathrooms</li>
+          <li>Granite kitchen platform with stainless steel sink</li>
+          <li>Bathrooms equipped with branded CP fittings, concealed pipes, and quality sanitaryware</li>
+          <li>Electrical points for inverter; generator backup for common areas</li>
+          <li>Provision for washing machine point in balcony</li>
+          <li>Rainwater harvesting and reliable water supply</li>
+          <li>High-speed elevator access</li>
+          <li>Efficient layouts for privacy and convenience</li>
+          <li>Superior finish, quality fittings, hassle-free maintenance</li>
+          <li>Safe electrical provisions and secure environment</li>
+          <li>Limited apartments for a secure and exclusive community</li>
+      </ul>
+  </div>
+</div>
+
+
+</div>
 
 </body>
 </html>
