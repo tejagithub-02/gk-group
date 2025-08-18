@@ -1,154 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GK Avenue Brochure</title>
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="images/logo1.png">
-
-<style>
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: #f5f5f5;
-        color: #333;
-        overflow-x: hidden;
-        line-height: 1.6;
-    }
-    header {
-        text-align: center;
-        padding: 20px 15px;
-        background: #003d3b;
-        color: #ffd700;
-        font-size: clamp(22px, 3vw, 36px);
-        font-weight: bold;
-        letter-spacing: 1px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        border-bottom: 3px solid rgba(255, 215, 0, 0.4);
-    }
-    /* Back Button */
-    .back-btn {
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        background: #fff;
-        border: 1px solid #ccc;
-        color: #003d3b;
-        padding: 8px 14px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        z-index: 9999;
-    }
-    .back-btn:hover {
-        background: #ffd700;
-        color: #000;
-    }
-    /* Brochure Section */
-    .brochure-container {
-        width: 95%;
-        max-width: 1200px;
-        margin: 30px auto;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GK Avenue Brochure</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo1.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <style>:root {
+    --primary: #c19a6b;
+    --primary-dark: #8c6e4a;
+    --dark: #222;
+    --light: #f9f9f9;
+    --gray: #e0e0e0;
+    --transition: all 0.3s ease;
+  }
+  
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark);
+    background: var(--light);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  
+  /* Back Button */
+  .back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    background: var(--primary);
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: var(--transition);
+  }
+  .back-btn:hover {
+    background: var(--primary-dark);
+    transform: translateX(-3px);
+  }
+  
+  /* Header */
+  header {
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                url('brochures/avenue-1.jpg') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px 100px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    margin-bottom: 18px;
+    color: var(--primary-dark);
+  }
+  .hero p {
+    font-size: 1.15rem;
+    color: #555;
+  }
+  
+  /* Brochure Container */
+  .brochure-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+    display: grid;
+    gap: 40px;
+  }
+  
+  /* Brochure Card */
+  .brochure-item {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: var(--transition);
+  }
+  .brochure-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  }
+  
+  /* Images */
+  .brochure-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* full image on mobile */
+    background: #fafafa;
+    border-bottom: 3px solid var(--primary);
+  }
+  
+  /* Text */
+  .brochure-text {
+    padding: 28px;
+  }
+  .brochure-text h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-dark);
+    margin-bottom: 18px;
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 8px;
+  }
+  .brochure-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
+  }
+  .brochure-text p {
+    margin-bottom: 16px;
+    color: #555;
+  }
+  .brochure-text ul {
+    list-style: none;
+  }
+  .brochure-text ul li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+  .brochure-text ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--primary);
+  }
+  .brochure-text b {
+    color: var(--primary-dark);
+  }
+  
+  /* Special Text-Only Section */
+  .text-only {
+    text-align: center;
+  }
+  .text-only .brochure-text h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .text-only .brochure-text p {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .hero h1 { font-size: 2.8rem; }
+  
     .brochure-item {
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        padding: 20px;
-        align-items: center;
+      flex-direction: row;
+      align-items: stretch;
+    }
+    .brochure-item:nth-child(even) {
+      flex-direction: row-reverse;
     }
     .brochure-item img {
-        width: 100%;
-        max-width: 480px;
-        border-radius: 10px;
-        object-fit: contain;
-        flex-shrink: 0;
+      width: 50%;
+      height: 100%;
+      object-fit: cover; /* crop neatly on larger screens */
+      border-bottom: none;
+    }
+    .brochure-item:nth-child(odd) img {
+      border-right: 3px solid var(--primary);
+    }
+    .brochure-item:nth-child(even) img {
+      border-left: 3px solid var(--primary);
     }
     .brochure-text {
-        flex: 1;
-        font-size: 16px;
-        color: #333;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
     }
-    .brochure-text h2 {
-        margin-top: 0;
-        margin-bottom: 12px;
-        color: #003d3b;
-        font-size: 22px;
-        border-left: 4px solid #ffd700;
-        padding-left: 10px;
-    }
-    .brochure-text ul {
-        margin: 0;
-        padding-left: 18px;
-    }
-    .brochure-text ul li {
-        margin-bottom: 6px;
-    }
-    /* Responsive */
-    @media (max-width: 900px) {
-        .brochure-item {
-            flex-direction: column;
-            text-align: center;
-        }
-        .brochure-item img {
-            max-width: 100%;
-        }
-        .brochure-text h2 {
-            border-left: none;
-            border-bottom: 2px solid #ffd700;
-            display: inline-block;
-            padding-left: 0;
-            padding-bottom: 4px;
-        }
-    }
-    @media (max-width: 600px) {
-        header {
-            font-size: 20px;
-            padding: 15px;
-        }
-        .brochure-text {
-            font-size: 14px;
-        }
-        .back-btn {
-            top: 75px;
-            left: 10px;
-            font-size: 12px;
-            padding: 6px 12px;
-        }
-    }
-</style>
+  }
+  @media (min-width: 992px) {
+    .hero h1 { font-size: 3rem; }
+    .brochure-text h2 { font-size: 2rem; }
+  }
+  </style>
 </head>
 <body>
 
 <!-- Back Button -->
-<a href="ongoing.html" class="back-btn">⬅ Back</a>
+<a href="ongoing.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
 
 <header>
     GK Avenue Brochure
 </header>
 
+<!-- Hero Intro -->
+<section class="hero">
+    <h1>Welcome to GK Groups – Luxury Meets Elegance</h1>
+    <p>Discover premium living in the heart of the city. With only 10 exclusive flats, 
+       GK Groups offers you modern comforts, world-class amenities, and the lifestyle you deserve.</p>
+</section>
+
 <!-- Brochure Section -->
 <div class="brochure-container">
 
     <div class="brochure-item">
-        <img src="brochures/avenue-1.jpg" alt="Brochure Page 1">
+        <img src="brochures/avenue-1.jpg" alt="GK Avenue Project Overview">
         <div class="brochure-text">
             <h2>Project Overview</h2>
             <p>GK Avenue is designed with modern architecture and premium facilities to offer a
-               luxurious living experience. With only <b>10 exclusive flats</b>, the project ensures
-               privacy, elegance, and comfort in every detail.</p>
+               luxurious living experience.</p>
             <ul>
                 <li>100% Vaastu Compliant Homes</li>
                 <li>Spacious 2BHK & 3BHK Units</li>
@@ -159,7 +256,7 @@
     </div>
 
     <div class="brochure-item">
-        <img src="brochures/avenue-2.jpg" alt="Brochure Page 2">
+        <img src="brochures/avenue-2.jpg" alt="GK Avenue Amenities">
         <div class="brochure-text">
             <h2>Amenities</h2>
             <p>Enjoy a lifestyle enriched with thoughtfully designed amenities for every age group.</p>
@@ -174,12 +271,12 @@
     </div>
 
     <div class="brochure-item">
-        <img src="brochures/avenue-3.jpg" alt="Brochure Page 3">
+        <img src="brochures/avenue-3.jpg" alt="GK Avenue Floor Plans">
         <div class="brochure-text">
             <h2>Floor Plans</h2>
             <p>Choose between spacious layouts designed for comfort and modern living:</p>
             <ul>
-                <li><b>2 BHK (1040 sq.ft.)</b> – Thoughtfully planned with ample space for a modern family.</li>
+                <li><b>2 BHK (1040 sq.ft.)</b> – Perfect for a nuclear family.</li>
                 <li><b>3 BHK (1430 sq.ft.)</b> – Spacious rooms, multiple balconies, and functional design.</li>
             </ul>
             <p>All units are built to maximize natural light and ventilation while maintaining privacy.</p>
@@ -187,17 +284,30 @@
     </div>
 
     <div class="brochure-item">
-        <img src="brochures/avenue-4.jpg" alt="Brochure Page 4">
+        <img src="brochures/avenue-4.jpg" alt="GK Avenue Specifications">
         <div class="brochure-text">
             <h2>Specifications</h2>
             <ul>
                 <li><b>Flooring:</b> Vitrified tiles with skirting in all rooms</li>
-                <li><b>Doors:</b> Solid wood teak veneer main door, laminated internal doors</li>
+                <li><b>Doors:</b> Solid wood teak veneer main door</li>
                 <li><b>Windows:</b> UPVC with glass panels</li>
-                <li><b>Kitchen:</b> Granite counter with ceramic tile dado & stainless steel sink</li>
+                <li><b>Kitchen:</b> Granite counter & stainless steel sink</li>
                 <li><b>Bathrooms:</b> Hindware/Parryware fittings, Jaquar accessories</li>
                 <li><b>Electrical:</b> Concealed copper wiring with Anchor switches</li>
-                <li><b>Generator:</b> Standby power for common areas & essentials</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="brochure-item text-only">
+        <div class="brochure-text">
+            <h2>Why Choose GK Groups?</h2>
+            <p>At GK Groups, every detail is designed to match your aspirations and lifestyle:</p>
+            <ul>
+                <li>Only 10 exclusive flats ensuring privacy and comfort</li>
+                <li>Premium construction quality with elegant finishes</li>
+                <li>Modern amenities for a hassle-free lifestyle</li>
+                <li>Peaceful surroundings yet centrally located</li>
+                <li>Developed by a trusted brand with a proven track record</li>
             </ul>
         </div>
     </div>
