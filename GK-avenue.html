@@ -8,27 +8,24 @@
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="images/logo1.png">
 
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
 <style>
     body {
         margin: 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #003d3b, #0d0d0d);
-        color: #fff;
+        background: #f5f5f5;
+        color: #333;
         overflow-x: hidden;
+        line-height: 1.6;
     }
     header {
         text-align: center;
-        padding: 25px 15px;
-        background: rgba(0, 61, 59, 0.9);
+        padding: 20px 15px;
+        background: #003d3b;
         color: #ffd700;
-        font-size: clamp(24px, 3vw, 38px);
+        font-size: clamp(22px, 3vw, 36px);
         font-weight: bold;
-        letter-spacing: 2px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        backdrop-filter: blur(6px);
+        letter-spacing: 1px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         border-bottom: 3px solid rgba(255, 215, 0, 0.4);
     }
     /* Back Button */
@@ -36,80 +33,101 @@
         position: fixed;
         top: 15px;
         left: 15px;
-        background: rgba(255, 215, 0, 0.15);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 215, 0, 0.5);
-        color: #ffd700;
-        padding: 10px 16px;
-        border-radius: 50px;
+        background: #fff;
+        border: 1px solid #ccc;
+        color: #003d3b;
+        padding: 8px 14px;
+        border-radius: 30px;
         text-decoration: none;
         font-size: 14px;
+        font-weight: 500;
         transition: all 0.3s ease;
         z-index: 9999;
     }
     .back-btn:hover {
-        background: rgba(255, 215, 0, 0.3);
-        transform: scale(1.05);
-    }
-    /* Swiper Container */
-    .swiper {
-        width: 90%;
-        max-width: 1400px;
-        aspect-ratio: 16 / 9; /* Keeps correct ratio */
-        margin: 40px auto;
-        border-radius: 15px;
-        overflow: hidden;
-        background: rgba(0, 61, 59, 0.7);
-        backdrop-filter: blur(6px);
-        padding: 10px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-        border: 3px solid rgba(255, 215, 0, 0.4);
-    }
-    .swiper-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* Ensures full visibility */
-        border-radius: 10px;
-        transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease;
-    }
-    .swiper-slide-active img {
-        transform: scale(1.03);
-        opacity: 1;
-        box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
-    }
-    /* Navigation */
-    .swiper-button-next,
-    .swiper-button-prev {
-        color: #ffd700;
-        text-shadow: 0 0 10px rgba(255,215,0,0.7);
-    }
-    .swiper-pagination-bullet {
         background: #ffd700;
-        opacity: 0.8;
+        color: #000;
     }
-    .swiper-pagination-bullet-active {
-        background: #ffcc00;
+    /* Brochure Section */
+    .brochure-container {
+        width: 95%;
+        max-width: 1200px;
+        margin: 30px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .brochure-item {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding: 20px;
+        align-items: center;
+    }
+    .brochure-item img {
+        width: 100%;
+        max-width: 480px;
+        border-radius: 10px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+    .brochure-text {
+        flex: 1;
+        font-size: 16px;
+        color: #333;
+    }
+    .brochure-text h2 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        color: #003d3b;
+        font-size: 22px;
+        border-left: 4px solid #ffd700;
+        padding-left: 10px;
+    }
+    .brochure-text ul {
+        margin: 0;
+        padding-left: 18px;
+    }
+    .brochure-text ul li {
+        margin-bottom: 6px;
     }
     /* Responsive */
-    @media (max-width: 768px) {
-        .swiper {
-            aspect-ratio: 4 / 3;
+    @media (max-width: 900px) {
+        .brochure-item {
+            flex-direction: column;
+            text-align: center;
         }
-    }
-    @media (max-width: 480px) {
-        .swiper {
-            aspect-ratio: 1 / 1;
+        .brochure-item img {
+            max-width: 100%;
+        }
+        .brochure-text h2 {
+            border-left: none;
+            border-bottom: 2px solid #ffd700;
+            display: inline-block;
+            padding-left: 0;
+            padding-bottom: 4px;
         }
     }
     @media (max-width: 600px) {
-    .back-btn {
-        top: 88px; /* push down so it clears the header text */
-        left: 10px;
-        font-size: 13px; /* slightly smaller for mobile */
-        padding: 8px 14px;
+        header {
+            font-size: 20px;
+            padding: 15px;
+        }
+        .brochure-text {
+            font-size: 14px;
+        }
+        .back-btn {
+            top: 75px;
+            left: 10px;
+            font-size: 12px;
+            padding: 6px 12px;
+        }
     }
-}
-
 </style>
 </head>
 <body>
@@ -121,42 +139,70 @@
     GK Avenue Brochure
 </header>
 
-<!-- Swiper Slider -->
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="brochures/avenue-1.jpg" alt="Slide 1"></div>
-        <div class="swiper-slide"><img src="brochures/avenue-2.jpg" alt="Slide 2"></div>
-        <div class="swiper-slide"><img src="brochures/avenue-3.jpg" alt="Slide 3"></div>
-        <div class="swiper-slide"><img src="brochures/avenue-4.jpg" alt="Slide 4"></div>
-       
-    </div>
-    <!-- Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Navigation -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-</div>
+<!-- Brochure Section -->
+<div class="brochure-container">
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-    speed: 800,
-});
-</script>
+    <div class="brochure-item">
+        <img src="brochures/avenue-1.jpg" alt="Brochure Page 1">
+        <div class="brochure-text">
+            <h2>Project Overview</h2>
+            <p>GK Avenue is designed with modern architecture and premium facilities to offer a
+               luxurious living experience. With only <b>10 exclusive flats</b>, the project ensures
+               privacy, elegance, and comfort in every detail.</p>
+            <ul>
+                <li>100% Vaastu Compliant Homes</li>
+                <li>Spacious 2BHK & 3BHK Units</li>
+                <li>RCC Framed Structure</li>
+                <li>High-quality finishes & fittings</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="brochure-item">
+        <img src="brochures/avenue-2.jpg" alt="Brochure Page 2">
+        <div class="brochure-text">
+            <h2>Amenities</h2>
+            <p>Enjoy a lifestyle enriched with thoughtfully designed amenities for every age group.</p>
+            <ul>
+                <li>Six Passenger Lift</li>
+                <li>24×7 Security with CCTV Surveillance</li>
+                <li>Power Backup</li>
+                <li>Intercom Facility</li>
+                <li>Well-ventilated Corridors</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="brochure-item">
+        <img src="brochures/avenue-3.jpg" alt="Brochure Page 3">
+        <div class="brochure-text">
+            <h2>Floor Plans</h2>
+            <p>Choose between spacious layouts designed for comfort and modern living:</p>
+            <ul>
+                <li><b>2 BHK (1040 sq.ft.)</b> – Thoughtfully planned with ample space for a modern family.</li>
+                <li><b>3 BHK (1430 sq.ft.)</b> – Spacious rooms, multiple balconies, and functional design.</li>
+            </ul>
+            <p>All units are built to maximize natural light and ventilation while maintaining privacy.</p>
+        </div>
+    </div>
+
+    <div class="brochure-item">
+        <img src="brochures/avenue-4.jpg" alt="Brochure Page 4">
+        <div class="brochure-text">
+            <h2>Specifications</h2>
+            <ul>
+                <li><b>Flooring:</b> Vitrified tiles with skirting in all rooms</li>
+                <li><b>Doors:</b> Solid wood teak veneer main door, laminated internal doors</li>
+                <li><b>Windows:</b> UPVC with glass panels</li>
+                <li><b>Kitchen:</b> Granite counter with ceramic tile dado & stainless steel sink</li>
+                <li><b>Bathrooms:</b> Hindware/Parryware fittings, Jaquar accessories</li>
+                <li><b>Electrical:</b> Concealed copper wiring with Anchor switches</li>
+                <li><b>Generator:</b> Standby power for common areas & essentials</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
