@@ -182,6 +182,25 @@
         padding: 40px;
       }
     }
+    @media (min-width: 768px) {
+  .brochure-item.text-only {
+    flex-direction: column;      /* stack instead of row */
+    align-items: center;         /* center horizontally */
+    justify-content: center;     /* center vertically */
+    text-align: center;          /* center text */
+  }
+
+  .brochure-item.text-only .brochure-text {
+    width: 100%;                 /* allow full width */
+    max-width: 800px;            /* but keep it tidy */
+    padding: 50px 40px;          /* extra breathing room */
+  }
+
+  .brochure-item.text-only .brochure-text h2::after {
+    left: 50%;                   /* underline centered */
+    transform: translateX(-50%);
+  }
+}
     
     @media (min-width: 992px) {
       .hero h1 { font-size: 3rem; }
