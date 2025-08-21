@@ -46,7 +46,7 @@
 	<div class="preloader">
 		<div class="loading-container">
 			<div class="loading"></div>
-			<div id="loading-icon"><img src="images\logo1.png " alt="Logo"></div>
+			<div id="loading-icon"><img src="images/logo-2.jpg.png" alt="Logo"></div>
 		</div>
 	</div>
 	<!-- Preloader End -->
@@ -138,8 +138,8 @@
       </div>
 
       <div class="swiper-slide">
-        <div class="banner-image banner-image-second">
-          <img src="images/new.png" alt="Banner 2">
+        <div class="banner-image">
+          <img src="images/b6.jpg" alt="Banner 1">
         </div>
       </div>
       
@@ -162,23 +162,7 @@
 
 
 /* Desktop-only fix (1025px and above) */
-/* Only for desktop screens */
-@media (min-width: 1025px) {
-  .banner-image-second img {
-    width: 140%;              /* Increased width */
-    height: auto;             
-    object-fit: contain !important;
-    object-position: center !important;
-  }
 
-  .banner-image-second {
-    display: flex;
-    justify-content: center !important;
-    align-items: center !important; 
-    height: 100vh;   
-    background: #000; 
-  }
-}
 
 
 
@@ -313,24 +297,35 @@
         <!-- About Content End -->
     </div>
 </div>
-        <style>
-            .section-title h3 {
-                color: gold;
-  font-size: 32px; /* adjust as needed */
-  font-weight: 600;
-}
-
-.section-title h2 {
-  font-size: 28px; /* adjust for desktop */
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.section-title p {
-  font-size: 24px; /* body text size */
-  line-height: 1.6;
-}
-        </style>
+<style>
+    /* About Section Typography */
+    .section-title h3 {
+      font-family: "Poppins", sans-serif; /* modern, clean font */
+      color: #d4af37; /* gold-like shade */
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .section-title h2 {
+      font-family: "Playfair Display", serif; /* elegant serif font */
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #222; /* deep gray for readability */
+      margin: 10px 0;
+    }
+    
+    .section-title p {
+      font-family: "Roboto", sans-serif; /* simple and readable */
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #555; /* softer gray for body text */
+    }
+    </style>
+    
         <!-- Three Cards Section Start -->
         <div class="row mt-5">
             <div class="col-lg-12">
